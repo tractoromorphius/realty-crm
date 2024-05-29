@@ -1,0 +1,11 @@
+services:
+  front:
+    image: realty/front
+    build: ./realty-crm-front
+    ports:
+      - 4200:4200
+    develop:
+      watch:
+        - path: ./realty-crm-front/src
+          action: sync
+          target: /app/src
