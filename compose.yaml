@@ -1,9 +1,24 @@
 services:
   front:
     image: realty/front
-    build: ./realty-crm-front
+    build:
+      context: ./realty-crm-front/
+      target: development
     ports:
-      - 4200:4200
+      - 4200:${FRONT_PORT:-4200}
+    develop:
+      watch:
+        - path: ./realty-crm-front/src
+          action: sync
+          target: /app/src
+  karma:
+    image: realty/front
+    build:
+      context: ./realty-crm-front/
+      target: development
+    command: [ "ng", "test" ]
+    ports:
+      - 9876:${KARMA_PORT:-9876}
     develop:
       watch:
         - path: ./realty-crm-front/src
