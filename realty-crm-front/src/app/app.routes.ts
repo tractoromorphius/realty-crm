@@ -9,4 +9,5 @@ export const routes: Routes = [
   {path: 'users', component: UsersComponent},
   {path: 'deals', component: DealsComponent},
   {path: 'orders', component: OrdersComponent},
+  {path: '', redirectTo: 'buildings', pathMatch: 'full'},
 ];
