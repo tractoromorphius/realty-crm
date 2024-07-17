@@ -1,1 +1,6 @@
-<p>buildings works!</p>
+@for (building of buildings; track building.id) {
+  <app-building-item
+    [building]="building"
+    (pushBuildingIdEvent)="goToBuildingPage($event)"
+  />
+}
