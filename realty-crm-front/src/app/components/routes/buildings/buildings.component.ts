@@ -1,15 +1,20 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { BuildingItemComponent } from './building-item/building-item.component';
 import { Building } from '../../../models/building';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buildings',
   standalone: true,
   imports: [BuildingItemComponent],
+  providers: [Router],
   templateUrl: './buildings.component.html',
   styleUrl: './buildings.component.scss'
 })
 export class BuildingsComponent {
+
+  constructor(private router: Router) {};
+
   readonly buildings: Building[] = [
     {id: 1, address: "тесттовская", floorCount: 10},
     {id: 2, address: "тесттовская", floorCount: 10},
@@ -25,6 +30,6 @@ export class BuildingsComponent {
   ];
 
   goToBuildingPage(id: number) {
-    console.log(id);
+    this.router.navigate(['buildings', id]);
   };
 }
