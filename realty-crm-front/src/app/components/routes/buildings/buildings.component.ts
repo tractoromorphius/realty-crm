@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   selector: 'app-buildings',
   standalone: true,
   imports: [BuildingItemComponent],
-  providers: [Router],
   templateUrl: './buildings.component.html',
   styleUrl: './buildings.component.scss'
 })
