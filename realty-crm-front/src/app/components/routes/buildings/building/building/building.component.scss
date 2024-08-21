@@ -5,8 +5,36 @@
 
 .column {
   background-color: gainsboro;
+  flex: 1;
   flex-grow: 1;
   overflow-y: scroll;
   padding: 0 15px;
   margin: 0 10px;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab-input {
+  display: none;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.tabs > .tab {
+  display: flex;
+  flex: 1;
+}
+
+.tab > .tab-box {
+  cursor: pointer;
+  text-align: center;
+  padding: rem;
+  width: 100%;
+}
+
+.tab > .tab-input:checked + .tab-box {
+  background: darkgray;
 }

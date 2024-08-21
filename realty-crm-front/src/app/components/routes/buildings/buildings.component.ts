@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BuildingItemComponent } from './building-item/building-item.component';
 import { Building } from '../../../models/building';
 import { Router } from '@angular/router';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-buildings',
