@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-building',
   standalone: true,
   imports: [],
   templateUrl: './building.component.html',
-  styleUrl: './building.component.scss'
+  styleUrl: './building.component.scss',
 })
 export class BuildingComponent {
 
