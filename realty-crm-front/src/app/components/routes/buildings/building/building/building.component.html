@@ -1,0 +1,26 @@
+<div class="building column">
+  <div class="tabs">
+    @for (tab of tabsList; track tab.name) {
+      <label for={{tab.name}} class="tab">
+        <input [formControl]="tabsRadio" id={{tab.name}} name="tabs" type="radio" value={{tab.name}} class="tab-input">
+        <div class="tab-box">{{tab.label}}</div>
+      </label>
+    }
+  </div>
+  @switch (tabsRadio.value) {
+    @case ('main') {
+      <app-building-form></app-building-form>
+    }
+    @case ('photo') {
+      Case 2
+    }
+    @case ('docments') {
+      Case 3
+    }
+    @case ('other') {
+      Case 4
+    }
+  }
+</div>
+<div class="blocks column">blocks</div>
+<div class="block column">block</div>
